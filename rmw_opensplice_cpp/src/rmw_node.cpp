@@ -28,6 +28,13 @@
 extern "C"
 {
 rmw_node_t *
+rmw_create_secure_node(const char * name, size_t domain_id, char ** security_files_paths)
+{
+  (void)security_files_paths;
+  return rmw_create_node(name, domain_id);
+}
+
+rmw_node_t *
 rmw_create_node(const char * name, size_t domain_id)
 {
   if (!name) {
